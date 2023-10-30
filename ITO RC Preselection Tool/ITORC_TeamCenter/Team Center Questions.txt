@@ -1,0 +1,37 @@
+1. What is the End of the Process ?.
+
+A. First need to Finish Current Development. 
+
+2. They are Few options not in Excel ? 
+  Like Compressors installation, Common Items will that steps also to be automated.
+A. Its is Not required to AUtomate which will be already filled.
+
+3. when ever we change the crank immediately no of gas cylinders are gettings changed 
+   are these both equals or bot needs to change the no of cylinder ?
+A. Bot Needs to change the Value for Cylinder also In all cases and hanedl the Exception and click On Okay 
+
+4. Reciprocating Compressor Type is disable all the Time as per my observation Even manually cannot select an option ?
+
+A. Bot needs to do nothing If option is diabled 
+
+5. These Input Sheet having Lot of Strings What if user enter a spelling Mistake ?
+A. User will not enter the values in team center to do not make mistakes.
+
+6. Will this Lube Oil System gets changed ?
+
+A. It will always Same 
+
+7. Under Cylinder Data COde We have List in Brackets. Do we get the Data As Same. - (S)HM150NCI ?
+
+A. This Needs to be checked again 
+
+8. Will Distance Piece wil be alwasy Double Compartment ?
+
+A> Always DOuble Compartment 
+
+9. Will the Cylinder Values will be same or change ?
+
+A. Needs to check this One 
+
+
+Bot Has to pick the complete Pre selector Sheet to Input and Out Sheet 

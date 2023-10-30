@@ -1,0 +1,1 @@
+taskkill /f /im excel.exe /im Chrome.exe /im Javaw.exe /im mshta.exe /im teamcenter.exe /im wfica32.exe

@@ -1,0 +1,130 @@
+ Warning code    1  discharge temperature greater than limit               
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    2  frame size not found for power/crank: biggest avail set
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    3  cylinder diameter not found: biggest avail selected    
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    4  load over allowable in performance calculation         
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    5  frame not found: size and # of cylinder not matching   
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    6  max frame size not sufficient for requirements         
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    7  thermodynamic calculation does not converge            
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    8  error in input gas mixture                             
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code    9  number of stages greater than maximum                  
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code   10  cylinders selection assembly details                   
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code   11  framesize is HES, selected cylinder is proper of HE    
+ Service 1
+A 6202 6202 6202 6202    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code   12  HG3 BFS cyl. preliminary data to be checked with RC-ENG
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Warning code   13  NOT Convergence in Automatic Selection or LightRcs     
+ Service 1
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 2
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  
+ Service 3
+A    0    0    0    0    0    0    0    0    0    0  
+L    0    0    0    0    0    0    0    0    0    0  

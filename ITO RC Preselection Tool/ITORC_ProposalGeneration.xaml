@@ -1,0 +1,817 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ITORC_ProposalGeneration" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_InputFileName" Type="InArgument(x:String)" />
+    <x:Property Name="In_PreSelectionTool" Type="InArgument(x:String)" />
+    <x:Property Name="In_ProspalSavePath" Type="InArgument(x:String)" />
+    <x:Property Name="In_Receipent" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,11396.6666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ITORC_ProposalGeneration_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ITORC_ProposalGeneration" sap:VirtualizedContainerService.HintSize="916,11332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="BudgetDataShettOutput" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="OpptyID" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="ItemName" />
+      <Variable x:TypeArguments="x:String" Name="CustomerName" />
+      <Variable x:TypeArguments="x:String" Name="Location" />
+      <Variable x:TypeArguments="x:String" Name="Service" />
+      <Variable x:TypeArguments="x:Double" Name="Quantity" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="OtherItemName" />
+      <Variable x:TypeArguments="x:String" Name="GasHandeled" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_C" />
+      <Variable x:TypeArguments="x:String" Name="linerTye_C" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_C" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_D" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_C" />
+      <Variable x:TypeArguments="x:String" Name="Liner_D" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_D" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_D" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_D" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_E" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_E" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_E" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_E" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_F" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_F" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_F" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_F" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_G" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_G" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_G" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_G" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_H" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_H" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_H" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_H" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_I" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_I" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_I" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_I" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_J" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_J" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_J" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_J" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_K" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_K" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_K" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_K" />
+      <Variable x:TypeArguments="x:String" Name="CylinderType_L" />
+      <Variable x:TypeArguments="x:String" Name="LinerType_L" />
+      <Variable x:TypeArguments="x:String" Name="PistonRings_L" />
+      <Variable x:TypeArguments="x:String" Name="PistonRod_L" />
+      <Variable x:TypeArguments="x:String" Name="FrameSize" />
+      <Variable x:TypeArguments="x:String" Name="LubeNoLube" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_C" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_E" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_F" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_G" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_H" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_I" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_J" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_K" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_L" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="DischargePressBar_D" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="874,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Into Proposal Generation&quot;]" />
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="KillProcess.bat" sap:VirtualizedContainerService.HintSize="874,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="874,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+    <Sequence DisplayName="CopyPasteExcel" sap:VirtualizedContainerService.HintSize="874,604.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="PreSelecinput" />
+        <Variable x:TypeArguments="sd:DataTable" Name="preSelout" />
+        <Variable x:TypeArguments="x:String" Name="copy_wkb" />
+        <Variable x:TypeArguments="x:String" Name="Paste_wkb" />
+        <Variable x:TypeArguments="x:String" Name="Var1" />
+        <Variable x:TypeArguments="x:String" Name="Var2" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,512.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" InstanceCachePeriod="3000" WorkbookPath="CopyPasteMacros.xlsm">
+        <ui:ExcelApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExcelWriteCell Cell="A1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_52" SheetName="Sheet1" Text="[In_PreSelectionTool]" />
+              <ui:ExcelWriteCell Cell="A2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_53" SheetName="Sheet1" Text="[In_InputFileName]" />
+              <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Execute Macro" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExecuteMacro_1" MacroName="CopyPaste" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ExcelApplicationScope.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ExcelApplicationScope>
+    </Sequence>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="874,178" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[In_InputFileName]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[BudgetDataShettOutput]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+            <ui:ExcelReadCell Cell="C2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[OpptyID]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C3" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[ItemName]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C4" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CustomerName]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C5" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[Location]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C6" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[Service]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C7" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:Double">[Quantity]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C8" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[OtherItemName]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C9" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_8" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[GasHandeled]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_9" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_C]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_10" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[linerTye_C]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_11" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_C]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_12" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_C]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="D11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_13" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_D]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="D12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_14" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_D]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="D13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_15" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_D]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="D14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_16" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_D]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="E11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_17" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_E]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="E12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_18" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_E]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="E13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_19" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_E]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="E14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_20" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_E]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="F11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_21" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_F]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="F12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_22" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_F]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="F13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_23" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_F]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="F14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_24" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_F]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="G11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_25" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_G]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="G12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_26" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_G]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="G13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_27" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_G]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="G14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_28" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_G]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="H11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_29" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_H]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="H12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_30" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_H]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="H13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_31" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_H]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="H14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_32" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_H]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="I11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_33" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_I]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="I12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_34" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_I]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="I13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_35" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_I]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="I14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_36" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_I]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="J11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_37" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_J]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="J12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_38" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_J]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="J13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_39" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_J]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="J14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_40" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_J]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="K11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_41" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_K]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="K12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_42" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_K]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="K13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_43" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_K]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="K14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_44" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_K]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="L11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_45" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[CylinderType_L]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="L12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_46" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LinerType_L]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="L13" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_47" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRings_L]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="L14" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_48" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[PistonRod_L]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C16" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_49" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[FrameSize]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C17" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_50" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="x:String">[LubeNoLube]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="C18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_51" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_C]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="D18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_52" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_D]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="E18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_53" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_E]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="F18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_54" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_F]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="G18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_55" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_G]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="H18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_56" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_H]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="I18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_57" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_I]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="J18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_58" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_J]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="K18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_59" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_K]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+            <ui:ExcelReadCell Cell="L18" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_60" SheetName="Budget_DataSheet values">
+              <ui:ExcelReadCell.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[DischargePressBar_L]</OutArgument>
+              </ui:ExcelReadCell.Result>
+            </ui:ExcelReadCell>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ExcelApplicationScope>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="874,10054" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[In_PreSelectionTool]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="840,9945.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelWriteCell Cell="W2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_51" SheetName="Budget_DataSheet" Text="Select" />
+            <Delay DisplayName=" Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <ui:ExcelWriteCell Cell="W2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_46" SheetName="Budget_DataSheet" Text="From Preselector" />
+            <Delay DisplayName=" Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+            <ui:ExcelWriteCell Cell="W4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_49" SheetName="Budget_DataSheet" Text="[FrameSize]" />
+            <Delay DisplayName=" Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
+            <ui:ExcelWriteCell Cell="W7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_50" SheetName="Budget_DataSheet" Text="YES" />
+            <Delay DisplayName=" Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
+            <ui:ExcelWriteCell Cell="Q1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Budget_DataSheet" Text="[OpptyID.ToString]" />
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <If Condition="[LubeNoLube = &quot;LUBE&quot;]" sap:VirtualizedContainerService.HintSize="798,466" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,305.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelWriteCell Cell="J10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_55" SheetName="Budget_DataSheet" Text="l" />
+                  <ui:ExcelWriteCell Cell="L10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_56" SheetName="Budget_DataSheet" Text="m" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,305.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelWriteCell Cell="L10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_57" SheetName="Budget_DataSheet" Text="l" />
+                  <ui:ExcelWriteCell Cell="J10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_58" SheetName="Budget_DataSheet" Text="m" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:ExcelWriteCell Cell="Q3" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Budget_DataSheet" Text="[ItemName]" />
+            <ui:ExcelWriteCell Cell="G7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Budget_DataSheet" Text="[CustomerName]" />
+            <ui:ExcelWriteCell Cell="O7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Budget_DataSheet" Text="[Location]" />
+            <ui:ExcelWriteCell Cell="G8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Budget_DataSheet" Text="[Service]" />
+            <ui:ExcelWriteCell Cell="O9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Budget_DataSheet" Text="[OtherItemName]" />
+            <ui:ExcelWriteCell Cell="M9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_54" SheetName="Budget_DataSheet" Text="[Quantity.ToString]" />
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <ui:ExcelWriteCell Cell="M15" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Budget_DataSheet" Text="[GasHandeled]" />
+            <ui:ExcelWriteCell Cell="M52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Budget_DataSheet" Text="[CylinderType_C]" />
+            <ui:ExcelWriteCell Cell="M53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Budget_DataSheet" Text="[linerTye_C]" />
+            <ui:ExcelWriteCell Cell="M54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Budget_DataSheet" Text="[PistonRings_C]" />
+            <ui:ExcelWriteCell Cell="M55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Budget_DataSheet" Text="[PistonRod_C]" />
+            <ui:ExcelWriteCell Cell="N52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Budget_DataSheet" Text="[CylinderType_D]" />
+            <ui:ExcelWriteCell Cell="N53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Budget_DataSheet" Text="[LinerType_D]" />
+            <ui:ExcelWriteCell Cell="N54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Budget_DataSheet" Text="[PistonRings_D]" />
+            <ui:ExcelWriteCell Cell="N55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="Budget_DataSheet" Text="[PistonRod_D]" />
+            <ui:ExcelWriteCell Cell="O52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_17" SheetName="Budget_DataSheet" Text="[CylinderType_E]" />
+            <ui:ExcelWriteCell Cell="O53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_18" SheetName="Budget_DataSheet" Text="[LinerType_E]" />
+            <ui:ExcelWriteCell Cell="O54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_19" SheetName="Budget_DataSheet" Text="[PistonRings_E]" />
+            <ui:ExcelWriteCell Cell="O55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_20" SheetName="Budget_DataSheet" Text="[PistonRod_E]" />
+            <ui:ExcelWriteCell Cell="P52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_21" SheetName="Budget_DataSheet" Text="[CylinderType_F]" />
+            <ui:ExcelWriteCell Cell="P53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_22" SheetName="Budget_DataSheet" Text="[LinerType_F]" />
+            <ui:ExcelWriteCell Cell="P54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_23" SheetName="Budget_DataSheet" Text="[PistonRings_F]" />
+            <ui:ExcelWriteCell Cell="P55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_24" SheetName="Budget_DataSheet" Text="[PistonRod_F]" />
+            <ui:ExcelWriteCell Cell="Q52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_25" SheetName="Budget_DataSheet" Text="[CylinderType_G]" />
+            <ui:ExcelWriteCell Cell="Q53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_26" SheetName="Budget_DataSheet" Text="[LinerType_G]" />
+            <ui:ExcelWriteCell Cell="Q54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_27" SheetName="Budget_DataSheet" Text="[PistonRings_G]" />
+            <ui:ExcelWriteCell Cell="Q55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_28" SheetName="Budget_DataSheet" Text="[PistonRod_G]" />
+            <ui:ExcelWriteCell Cell="R52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_29" SheetName="Budget_DataSheet" Text="[CylinderType_H]" />
+            <ui:ExcelWriteCell Cell="R53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_30" SheetName="Budget_DataSheet" Text="[LinerType_H]" />
+            <ui:ExcelWriteCell Cell="R54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_31" SheetName="Budget_DataSheet" Text="[PistonRings_H]" />
+            <ui:ExcelWriteCell Cell="R55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_32" SheetName="Budget_DataSheet" Text="[PistonRod_H]" />
+            <ui:ExcelWriteCell Cell="S52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_33" SheetName="Budget_DataSheet" Text="[CylinderType_I]" />
+            <ui:ExcelWriteCell Cell="S53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_34" SheetName="Budget_DataSheet" Text="[LinerType_I]" />
+            <ui:ExcelWriteCell Cell="S54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_35" SheetName="Budget_DataSheet" Text="[PistonRings_I]" />
+            <ui:ExcelWriteCell Cell="S55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_36" SheetName="Budget_DataSheet" Text="[PistonRod_I]" />
+            <ui:ExcelWriteCell Cell="T52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_37" SheetName="Budget_DataSheet" Text="[CylinderType_J]" />
+            <ui:ExcelWriteCell Cell="T53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_38" SheetName="Budget_DataSheet" Text="[LinerType_J]" />
+            <ui:ExcelWriteCell Cell="T54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_39" SheetName="Budget_DataSheet" Text="[PistonRings_J]" />
+            <ui:ExcelWriteCell Cell="T55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_40" SheetName="Budget_DataSheet" Text="[PistonRod_J]" />
+            <ui:ExcelWriteCell Cell="U52" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_41" SheetName="Budget_DataSheet" Text="[CylinderType_K]" />
+            <ui:ExcelWriteCell Cell="U53" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_42" SheetName="Budget_DataSheet" Text="[LinerType_K]" />
+            <ui:ExcelWriteCell Cell="U54" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_43" SheetName="Budget_DataSheet" Text="[PistonRings_K]" />
+            <ui:ExcelWriteCell Cell="U55" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_44" SheetName="Budget_DataSheet" Text="[PistonRod_K]" />
+            <ui:ExcelWriteCell Cell="X19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_59" SheetName="Budget_DataSheet" Text="[DischargePressBar_C.ToString]" />
+            <ui:ExcelWriteCell Cell="Y19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_60" SheetName="Budget_DataSheet" Text="[DischargePressBar_D.ToString]" />
+            <ui:ExcelWriteCell Cell="Z19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_61" SheetName="Budget_DataSheet" Text="[DischargePressBar_E.ToString]" />
+            <ui:ExcelWriteCell Cell="AA19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_62" SheetName="Budget_DataSheet" Text="[DischargePressBar_F]" />
+            <ui:ExcelWriteCell Cell="AB19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_63" SheetName="Budget_DataSheet" Text="[DischargePressBar_G]" />
+            <ui:ExcelWriteCell Cell="AC19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_64" SheetName="Budget_DataSheet" Text="[DischargePressBar_H]" />
+            <ui:ExcelWriteCell Cell="AD19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_65" SheetName="Budget_DataSheet" Text="[DischargePressBar_I]" />
+            <ui:ExcelWriteCell Cell="AE19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_66" SheetName="Budget_DataSheet" Text="[DischargePressBar_J]" />
+            <ui:ExcelWriteCell Cell="AF19" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_67" SheetName="Budget_DataSheet" Text="[DischargePressBar_K]" />
+            <Sequence DisplayName="Converting Excel As PDF " sap:VirtualizedContainerService.HintSize="798,1755.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Converting Exce into Pdf&quot;]" />
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'excel.exe Presizing-RC_...'" sap:VirtualizedContainerService.HintSize="434,1528.66666666667" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="fd4aa477e8a1266b314a00ddc6d3637e" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='RC_H-series_Presizing_5-0-0-20.xlsm - Excel' /&gt;">
+                <ui:WindowScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1382.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_2" />
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click On File Name " sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cf0b00fb-3c35-46b9-a188-76eedf575f54" InformativeScreenshot="d724f7bf764a55c72b46a2d065eac1c3" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='File Tab' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'List Item  Save As'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d82d1529-466d-4d3e-8c2e-5c723c96f8d9" InformativeScreenshot="0dab25bece4923690864214f52e8c93a" Selector="&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='File' /&gt;&lt;uia cls='NetUIRibbonTab' name='Save As' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'Button  Browse'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="067903d1-695d-4289-867d-63819d1ef4da" InformativeScreenshot="9a2c5e595dfd576ca673607a522655fa" Selector="&lt;uia cls='NetUIElement' name='Save As' /&gt;&lt;uia cls='NetUISlabContainer' name='Saving Features' /&gt;&lt;uia cls='NetUIElement' /&gt;&lt;uia cls='NetUISimpleButton' name='Browse' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="2000" DisplayName="Set Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[In_ProspalSavePath]">
+                        <ui:SetValue.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b732cce1-c211-42ae-8b25-6b5998fb25c4" InformativeScreenshot="ae85f9fbbc05780c73c9b786d77cfcc7" Selector="&lt;wnd app='excel.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SetValue.Target>
+                      </ui:SetValue>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ComboBox'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ee76ea22-1af9-4d1e-8c91-6ea84e713c10" InformativeScreenshot="d982f857a0139a3a1fe97862b09a63c4" Selector="&lt;wnd app='excel.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Save as type:' cls='ComboBox' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'list item  PDF (*.pdf)'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2758c531-2a90-4334-8a2d-9aefabbc017a" InformativeScreenshot="2d3c55e004a73683e1aa624b39e2a912" Selector="&lt;wnd app='excel.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='Save as type:' role='list' /&gt;&lt;ctrl name='PDF (*.pdf)' role='list item' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="66c89e20-0d43-49f6-814d-e3f173e96ecb" InformativeScreenshot="3c01c45e3af6c203ed8e3083dfb7a6b6" Selector="&lt;wnd app='excel.exe' cls='#32770' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <Delay DisplayName="Delay Added for Converting Excel to PDF Format" Duration="00:00:20" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Proposal Generation Completed&quot;]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:WindowScope.Body>
+              </ui:WindowScope>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ExcelApplicationScope>
+  </Sequence>
+</Activity>

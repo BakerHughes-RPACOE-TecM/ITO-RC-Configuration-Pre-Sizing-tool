@@ -1,0 +1,254 @@
+
+ERROR: 07:54:56,845  - TcLogger$IC_LogListener.logging:?
+org.eclipse.core.runtime - org.eclipse.ui - 4 - Unable to create menu item "com.teamcenter.rac.se.ui.Fnd0HTMLObjTmpl", command "com.teamcenter.rac.se.ui.Fnd0HTMLObjTmpl" not defined
+
+ERROR: 07:54:56,847  - TcLogger$IC_LogListener.logging:?
+org.eclipse.core.runtime - org.eclipse.ui - 4 - Unable to create menu item "com.teamcenter.rac.se.advancedfeatures.newBudgetDefinition", command "com.teamcenter.rac.se.advancedfeatures.newBudgetDefinition" not defined
+
+ERROR: 07:54:56,848  - TcLogger$IC_LogListener.logging:?
+org.eclipse.core.runtime - org.eclipse.ui - 4 - Unable to create menu item "com.teamcenter.rac.se.advancedfeatures.editBudgetAction", command "com.teamcenter.rac.se.advancedfeatures.editBudgetAction" not defined
+
+ERROR: 07:54:56,916  - TcLogger$IC_LogListener.logging:?
+org.eclipse.core.runtime - org.eclipse.ui - 4 - Unable to create menu item "com.teamcenter.rac.Fnd0HTMLObjTmpl", command "com.teamcenter.rac.Fnd0HTMLObjTmpl" not defined
+
+ERROR: 07:54:57,007  - TcLogger$IC_LogListener.logging:?
+org.eclipse.core.runtime - org.eclipse.ui - 4 - Unable to create menu item "com.teamcenter.rac.se.advancedfeatures.editBudgetAction", command "com.teamcenter.rac.se.advancedfeatures.editBudgetAction" not defined
+
+WARN : 07:55:02,800  - TcLogger$IC_PrintStream.log:?
+%d{HH:mm:ss} %-5p :: %m
+
+
+ERROR: 07:55:02,805  - TcLogger$IC_PrintStream.log:?
+Deleting old Logfile 'C:\Users\Koraara\AppData\Local\Temp/bct/bct_portal_1667906906766.log'
+
+WARN : 07:55:03,080  - TcLogger$IC_PrintStream.log:?
+bct_addons.ini not found in 'config\bct_addons.ini'
+
+ERROR: 07:55:05,605  - TcLogger$IC_LogListener.logging:?
+org.eclipse.core.runtime - org.eclipse.ui - 0 - Unhandled event loop exception
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.UnsatisfiedLinkError: BCT_EOMS_DIR ist not set!)
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4144)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.teamcenter.rac.handlers.UserSettingsHandler.execute(Unknown Source)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:178)
+	at com.teamcenter.rac.aif.RACPerspectiveHeader.secondHeaderMouseUp(Unknown Source)
+	at com.teamcenter.rac.aif.RACPerspectiveHeader.access$1(Unknown Source)
+	at com.teamcenter.rac.aif.RACPerspectiveHeader$1.mouseUp(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:220)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at com.teamcenter.rac.aifrcp.Application.runApplication(Unknown Source)
+	at com.teamcenter.rac.aifrcp.Application.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+Caused by: java.lang.UnsatisfiedLinkError: BCT_EOMS_DIR ist not set!
+	at com.bct.tc_portal.common.BctActivator.getLibraryPath(BctActivator.java:245)
+	at com.bct.tc_portal.common.BctActivator$1.run(BctActivator.java:101)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 38 more
+
+ERROR: 07:55:48,169  - TcLogger$IC_PrintStream.logButCheckForException:?
+org.json.JSONException
+org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+ERROR: 07:55:48,169  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+
+ERROR: 07:55:48,169  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+
+ERROR: 07:55:48,169  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+
+ERROR: 07:55:48,169  - TcLogger$IC_PrintStream.log:?
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+
+ERROR: 07:55:48,169  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+
+ERROR: 07:55:48,169  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+
+ERROR: 07:55:48,171  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+
+ERROR: 07:55:48,171  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+
+ERROR: 07:55:48,171  - TcLogger$IC_PrintStream.log:?
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+ERROR: 07:56:41,370  - TcLogger$IC_LogListener.logging:?
+org.eclipse.core.runtime - org.eclipse.ui - 4 - Part already exists in page layout: com.teamcenter.rac.gettingstarted.GettingStartedView.
+
+WARN : 07:57:58,669  - TcLogger$IC_PrintStream.log:?
+LoadNewBridgeImpl jarpath: C:\Users\Koraara\.nuget\packages\uipath\22.10.46.47635\build\UiPath\JavaSupport
+
+WARN : 07:57:58,670  - TcLogger$IC_PrintStream.log:?
+adding jaccess.jar url: file:/C:/Users/Koraara/.nuget/packages/uipath/22.10.46.47635/build/UiPath/JavaSupport/jaccess.jar
+
+WARN : 07:57:58,845  - TcLogger$IC_PrintStream.log:?
+UiPathJavaBridge DLL loaded from: C:\Users\Koraara\.nuget\packages\uipath\22.10.46.47635\build\UiPath\UiPathJavaBridgeImplV8_x64.dll
+
+WARN : 07:57:58,857  - TcLogger$IC_PrintStream.log:?
+UiPathBridgeImpl call start native
+
+ERROR: 08:11:44,393  - MessageBoxFactory.determineTitle:?
+The '/' character is not allowed in Alternate Name.
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.logButCheckForException:?
+org.json.JSONException
+org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+
+ERROR: 08:15:28,574  - TcLogger$IC_PrintStream.log:?
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.logButCheckForException:?
+org.json.JSONException
+org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+
+ERROR: 08:16:00,511  - TcLogger$IC_PrintStream.log:?
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.logButCheckForException:?
+org.json.JSONException
+org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:195)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at org.json.JSONObject.<init>(JSONObject.java:319)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at com.ge.oilandgas.akana.client.OauthTokenResolver.getToken(OauthTokenResolver.java:41)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryUsingAkana(SFDCWebService.java:125)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.query(SFDCWebService.java:102)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SFDCWebService.queryOpportunity(SFDCWebService.java:225)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at com.teamcenter.rac.genpito.operations.checklistuser.SearchOpportunityDBOperation.run(SearchOpportunityDBOperation.java:66)
+
+ERROR: 08:19:23,996  - TcLogger$IC_PrintStream.log:?
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
