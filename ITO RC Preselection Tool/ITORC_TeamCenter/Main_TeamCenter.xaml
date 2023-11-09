@@ -207,10 +207,26 @@
       <Variable x:TypeArguments="ui:GenericValue" Name="OpptyId" />
       <Variable x:TypeArguments="x:Boolean" Name="NoFreeOpptyId" />
       <Variable x:TypeArguments="x:Boolean" Name="AddAlternate" />
-      <Variable x:TypeArguments="x:Int32" Default="2" Name="CountAddTrain" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="CheckListCounter" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="InitiateBomCounter" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="CostingCounter" />
+      <Variable x:TypeArguments="x:Int32" Name="CountAddTrain">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="2" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="CheckListCounter">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="InitiateBomCounter">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="CostingCounter">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="InductionType" />
       <Variable x:TypeArguments="ui:GenericValue" Name="PolesType" />
       <Variable x:TypeArguments="ui:GenericValue" Name="PowerType" />
@@ -1946,7 +1962,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">110,804.666666666666 110,834.666666666666 570,834.666666666666 570,684.666666666666</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Add Alternate Sequence" sap:VirtualizedContainerService.HintSize="376,889.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_377">
+                                  <Sequence DisplayName="Add Alternate Sequence" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_377">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Name="MaximizeWindow" />
                                     </Sequence.Variables>
@@ -3314,7 +3330,7 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">810,784.666666666667 810,825.333333333333</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Adding the Values to Train" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                              <Sequence DisplayName="Adding the Values to Train" sap:VirtualizedContainerService.HintSize="882,10350" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -12090,7 +12106,7 @@
                                                         </Sequence>
                                                       </Sequence>
                                                     </Sequence>
-                                                    <Sequence x:Key="8" DisplayName="8 Cylinder Case Citrix" sap:VirtualizedContainerService.HintSize="242,926.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_737">
+                                                    <Sequence x:Key="8" DisplayName="8 Cylinder Case Citrix" sap:VirtualizedContainerService.HintSize="484.666666666667,2521.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_737">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -13213,7 +13229,7 @@
                                                           </ui:Click>
                                                         </Sequence>
                                                       </Sequence>
-                                                      <Sequence DisplayName="5 Cylinder Case Citrix" sap:VirtualizedContainerService.HintSize="442.666666666667,1664" sap2010:WorkflowViewState.IdRef="Sequence_853">
+                                                      <Sequence DisplayName="5 Cylinder Case Citrix" sap:VirtualizedContainerService.HintSize="442.666666666667,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_853">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -14698,7 +14714,7 @@
                                                     </If.Else>
                                                   </If>
                                                 </Sequence>
-                                                <Sequence DisplayName="Volume Bottel" sap:VirtualizedContainerService.HintSize="840,1300.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_172">
+                                                <Sequence DisplayName="Volume Bottel" sap:VirtualizedContainerService.HintSize="840,546.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_172">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -14727,7 +14743,7 @@
                                                       </ui:Target>
                                                     </ui:Click.Target>
                                                   </ui:Click>
-                                                  <Switch x:TypeArguments="x:Double" DisplayName="Switch For Volume Bottel" Expression="[NumberOfCylinders]" sap:VirtualizedContainerService.HintSize="496.666666666667,1062.66666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                                  <Switch x:TypeArguments="x:Double" DisplayName="Switch For Volume Bottel" Expression="[NumberOfCylinders]" sap:VirtualizedContainerService.HintSize="496.666666666667,308.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -17426,7 +17442,7 @@
                                                             </ui:CursorPosition>
                                                           </ui:Click.CursorPosition>
                                                           <ui:Click.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7f95d7-59b7-4bca-913f-0537c303c2ca" InformativeScreenshot="bb5986aa1b9ad82c0170d586091fb22c" Selector="[String.Format(&quot;&lt;wnd app='javaw.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='Stage [Rulestream] {{5}}' role='list' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, SuctionVolumeBottleMaterialStage_5)]">
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7f95d7-59b7-4bca-913f-0537c303c2ca" InformativeScreenshot="bb5986aa1b9ad82c0170d586091fb22c" Selector="[String.Format(&quot;&lt;wnd app='javaw.exe' cls='ComboLBox' isremoteapp='1' idx='*' /&gt;&lt;ctrl name='Stage [Rulestream] {{5}}' role='list' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, SuctionVolumeBottleMaterialStage_5)]">
                                                               <ui:Target.TimeoutMS>
                                                                 <InArgument x:TypeArguments="x:Int32" />
                                                               </ui:Target.TimeoutMS>
@@ -17448,7 +17464,7 @@
                                                             </ui:CursorPosition>
                                                           </ui:Click.CursorPosition>
                                                           <ui:Click.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf77767-4f16-4406-9ca1-5c13dde73564" InformativeScreenshot="069d95b09ec5ea27ac14fc5b47203665" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' title='*' /&gt;&lt;wnd aaname='Discharge Volume Bottle Material [Rulestream] {5}' cls='ComboBox' /&gt;">
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf77767-4f16-4406-9ca1-5c13dde73564" InformativeScreenshot="069d95b09ec5ea27ac14fc5b47203665" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='*' /&gt;&lt;wnd aaname='Discharge Volume Bottle Material [Rulestream] {5}' cls='ComboBox' /&gt;">
                                                               <ui:Target.TimeoutMS>
                                                                 <InArgument x:TypeArguments="x:Int32" />
                                                               </ui:Target.TimeoutMS>
@@ -17526,10 +17542,10 @@
                                                         </ui:Click>
                                                       </Sequence>
                                                     </Sequence>
-                                                    <Sequence x:Key="6" DisplayName="Number Cylinders 6 Citrix" sap:VirtualizedContainerService.HintSize="242,708" sap2010:WorkflowViewState.IdRef="Sequence_225">
+                                                    <Sequence x:Key="6" DisplayName="Number Cylinders 6 Citrix" sap:VirtualizedContainerService.HintSize="242,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_225">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
@@ -18638,10 +18654,10 @@
                                                         </ui:Click>
                                                       </Sequence>
                                                     </Sequence>
-                                                    <Sequence x:Key="7" DisplayName="Number Cylinders 7 Citrix" sap:VirtualizedContainerService.HintSize="242,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_233">
+                                                    <Sequence x:Key="7" DisplayName="Number Cylinders 7 Citrix" sap:VirtualizedContainerService.HintSize="242,817.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_233">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
@@ -19466,7 +19482,7 @@
                                                             </ui:CursorPosition>
                                                           </ui:Click.CursorPosition>
                                                           <ui:Click.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7f95d7-59b7-4bca-913f-0537c303c2ca" InformativeScreenshot="bb5986aa1b9ad82c0170d586091fb22c" Selector="[String.Format(&quot;&lt;wnd app='javaw.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='Stage [Rulestream] {{5}}' role='list' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, SuctionVolumeBottleMaterialStage_5)]">
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7f95d7-59b7-4bca-913f-0537c303c2ca" InformativeScreenshot="bb5986aa1b9ad82c0170d586091fb22c" Selector="[String.Format(&quot;&lt;wnd app='javaw.exe' cls='ComboLBox' isremoteapp='1' idx='*' /&gt;&lt;ctrl name='Stage [Rulestream] {{5}}' role='list' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, SuctionVolumeBottleMaterialStage_5)]">
                                                               <ui:Target.TimeoutMS>
                                                                 <InArgument x:TypeArguments="x:Int32" />
                                                               </ui:Target.TimeoutMS>
@@ -19488,7 +19504,7 @@
                                                             </ui:CursorPosition>
                                                           </ui:Click.CursorPosition>
                                                           <ui:Click.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf77767-4f16-4406-9ca1-5c13dde73564" InformativeScreenshot="069d95b09ec5ea27ac14fc5b47203665" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' title='*' /&gt;&lt;wnd aaname='Discharge Volume Bottle Material [Rulestream] {5}' cls='ComboBox' /&gt;">
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf77767-4f16-4406-9ca1-5c13dde73564" InformativeScreenshot="069d95b09ec5ea27ac14fc5b47203665" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='*' /&gt;&lt;wnd aaname='Discharge Volume Bottle Material [Rulestream] {5}' cls='ComboBox' /&gt;">
                                                               <ui:Target.TimeoutMS>
                                                                 <InArgument x:TypeArguments="x:Int32" />
                                                               </ui:Target.TimeoutMS>
@@ -19934,7 +19950,7 @@
                                                         </ui:Click>
                                                       </Sequence>
                                                     </Sequence>
-                                                    <Sequence x:Key="8" DisplayName="Number Cylinders 8 Citrix" sap:VirtualizedContainerService.HintSize="242,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_242">
+                                                    <Sequence x:Key="8" DisplayName="Number Cylinders 8 Citrix" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_242">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -20762,7 +20778,7 @@
                                                             </ui:CursorPosition>
                                                           </ui:Click.CursorPosition>
                                                           <ui:Click.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7f95d7-59b7-4bca-913f-0537c303c2ca" InformativeScreenshot="bb5986aa1b9ad82c0170d586091fb22c" Selector="[String.Format(&quot;&lt;wnd app='javaw.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='Stage [Rulestream] {{5}}' role='list' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, SuctionVolumeBottleMaterialStage_5)]">
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7f95d7-59b7-4bca-913f-0537c303c2ca" InformativeScreenshot="bb5986aa1b9ad82c0170d586091fb22c" Selector="[String.Format(&quot;&lt;wnd app='javaw.exe' cls='ComboLBox' isremoteapp='1' idx='*' /&gt;&lt;ctrl name='Stage [Rulestream] {{5}}' role='list' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, SuctionVolumeBottleMaterialStage_5)]">
                                                               <ui:Target.TimeoutMS>
                                                                 <InArgument x:TypeArguments="x:Int32" />
                                                               </ui:Target.TimeoutMS>
@@ -20784,7 +20800,7 @@
                                                             </ui:CursorPosition>
                                                           </ui:Click.CursorPosition>
                                                           <ui:Click.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf77767-4f16-4406-9ca1-5c13dde73564" InformativeScreenshot="069d95b09ec5ea27ac14fc5b47203665" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' title='*' /&gt;&lt;wnd aaname='Discharge Volume Bottle Material [Rulestream] {5}' cls='ComboBox' /&gt;">
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf77767-4f16-4406-9ca1-5c13dde73564" InformativeScreenshot="069d95b09ec5ea27ac14fc5b47203665" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='*' /&gt;&lt;wnd aaname='Discharge Volume Bottle Material [Rulestream] {5}' cls='ComboBox' /&gt;">
                                                               <ui:Target.TimeoutMS>
                                                                 <InArgument x:TypeArguments="x:Int32" />
                                                               </ui:Target.TimeoutMS>
@@ -21437,13 +21453,13 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1726,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;BOM Initiate Process Started&quot;]" />
-                                                    <Sequence DisplayName="Save the Oppourtunity" sap:VirtualizedContainerService.HintSize="1726,1135.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_263">
+                                                    <Sequence DisplayName="Save the Oppourtunity" sap:VirtualizedContainerService.HintSize="1726,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_263">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="x:String" Name="String_OpptyId" />
                                                       </Sequence.Variables>
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>

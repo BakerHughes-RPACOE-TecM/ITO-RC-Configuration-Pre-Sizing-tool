@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,11396.6666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>906,11396.6666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ITORC_ProposalGeneration_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -90,7 +90,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="BudgetDataShettOutput" />
       <Variable x:TypeArguments="ui:GenericValue" Name="OpptyID" />
       <Variable x:TypeArguments="ui:GenericValue" Name="ItemName" />
-      <Variable x:TypeArguments="x:String" Name="CustomerName" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="CustomerName" />
       <Variable x:TypeArguments="x:String" Name="Location" />
       <Variable x:TypeArguments="x:String" Name="Service" />
       <Variable x:TypeArguments="x:Double" Name="Quantity" />
@@ -205,7 +205,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,6070.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -231,7 +231,7 @@
             </ui:ExcelReadCell>
             <ui:ExcelReadCell Cell="C4" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="Budget_DataSheet values">
               <ui:ExcelReadCell.Result>
-                <OutArgument x:TypeArguments="x:String">[CustomerName]</OutArgument>
+                <OutArgument x:TypeArguments="ui:GenericValue">[CustomerName]</OutArgument>
               </ui:ExcelReadCell.Result>
             </ui:ExcelReadCell>
             <ui:ExcelReadCell Cell="C5" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="Budget_DataSheet values">

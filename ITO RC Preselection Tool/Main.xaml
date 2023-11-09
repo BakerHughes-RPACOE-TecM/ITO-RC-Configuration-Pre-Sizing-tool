@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1836.66666666667,5682</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1716.66666666667,5962.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -54,7 +54,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -88,9 +88,10 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
       <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1846.66666666667,5617.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="1726.66666666667,5898" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="TechDataUpperIndex" />
       <Variable x:TypeArguments="x:Int32" Name="TechDataLowerIndex" />
@@ -119,15 +120,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Check the Input File EMail" sap:VirtualizedContainerService.HintSize="1804.66666666667,5525.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Check the Input File EMail" sap:VirtualizedContainerService.HintSize="1684.66666666667,5806" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetExchangeMailMessages ApplicationId="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" FilterByMessageIds="{x:Null}" FilterExpression="{x:Null}" SecurePassword="{x:Null}" SharedMailbox="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" CustomFolder="Inbox" DisplayName="Get Exchange Mail Messages" ExchangeVersion="Exchange2007_SP1" GetAttachements="True" sap:VirtualizedContainerService.HintSize="1762.66666666667,22" sap2010:WorkflowViewState.IdRef="GetExchangeMailMessages_1" IsBodyHtml="False" MailFolder="Calendar" MarkAsRead="True" Messages="[InputEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Password="2Az{[IkFb2S1.[Zv7,/Q^9,y9" Server="https://mail.bakerhughes.com/EWS/Exchange.asmx" Top="30" User="SVC-AI-BOT-1" />
-      <If Condition="[InputEmail.ToArray.Length = 0]" sap:VirtualizedContainerService.HintSize="1762.66666666667,5371.33333333333" sap2010:WorkflowViewState.IdRef="If_12">
+      <ui:GetExchangeMailMessages ApplicationId="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" FilterByMessageIds="{x:Null}" FilterExpression="{x:Null}" SecurePassword="{x:Null}" SharedMailbox="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" CustomFolder="Inbox" DisplayName="Get Exchange Mail Messages" ExchangeVersion="Exchange2007_SP1" GetAttachements="True" sap:VirtualizedContainerService.HintSize="1642.66666666667,22" sap2010:WorkflowViewState.IdRef="GetExchangeMailMessages_1" IsBodyHtml="False" MailFolder="Calendar" MarkAsRead="True" Messages="[InputEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Password="2Az{[IkFb2S1.[Zv7,/Q^9,y9" Server="https://mail.bakerhughes.com/EWS/Exchange.asmx" Top="30" User="SVC-AI-BOT-1" />
+      <If Condition="[InputEmail.ToArray.Length = 0]" sap:VirtualizedContainerService.HintSize="1642.66666666667,5652" sap2010:WorkflowViewState.IdRef="If_12">
         <If.Then>
           <Sequence DisplayName="No EMail" sap:VirtualizedContainerService.HintSize="376,186.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
@@ -139,20 +140,20 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Emails Fetched" sap:VirtualizedContainerService.HintSize="1340.66666666667,5207.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Emails Fetched" sap:VirtualizedContainerService.HintSize="1220.66666666667,5488" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1298.66666666667,5115.33333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[InputEmail]">
+            <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1178.66666666667,5396" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[InputEmail]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="Mail" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="1262,4976.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <Sequence sap:VirtualizedContainerService.HintSize="1142,5257.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_33">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="MailDomain" />
                       <Variable x:TypeArguments="ui:GenericValue" Name="StageOne" />
@@ -164,7 +165,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="1220,62" sap2010:WorkflowViewState.IdRef="Assign_31">
+                    <Assign sap:VirtualizedContainerService.HintSize="1100,62" sap2010:WorkflowViewState.IdRef="Assign_31">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[MailDomain]</OutArgument>
                       </Assign.To>
@@ -172,7 +173,7 @@
                         <InArgument x:TypeArguments="x:String">[Mail.From.Host]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[MailDomain = &quot;bakerhughes.com&quot;]" sap:VirtualizedContainerService.HintSize="1220,4782.66666666667" sap2010:WorkflowViewState.IdRef="If_13">
+                    <If Condition="[MailDomain = &quot;bakerhughes.com&quot;]" sap:VirtualizedContainerService.HintSize="1100,5063.33333333333" sap2010:WorkflowViewState.IdRef="If_13">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,7 +181,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="798,4618.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="678,4899.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="si:FileInfo" Name="FileForUser" />
                             <Variable x:TypeArguments="x:String" Name="FileForUserName" />
@@ -191,7 +192,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Deleting Folder Content " sap:VirtualizedContainerService.HintSize="756,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <Sequence DisplayName="Deleting Folder Content " sap:VirtualizedContainerService.HintSize="636,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_26">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:String[]" Name="TeamCenterCostsheet" />
                               <Variable x:TypeArguments="s:String[]" Name="ErrorScreenShot" />
@@ -413,7 +414,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ForEach>
                           </Sequence>
-                          <If Condition="[Mail.Subject.ToString.Contains(&quot;Ito Rc Configuration&quot;)]" sap:VirtualizedContainerService.HintSize="756,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_11">
+                          <If Condition="[Mail.Subject.ToString.Contains(&quot;Ito Rc Configuration&quot;)]" sap:VirtualizedContainerService.HintSize="636,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_11">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -435,7 +436,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="756,214.666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_4" Values="[Directory.GetFiles(in_Folderpath)]">
+                          <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="636,214.666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_4" Values="[Directory.GetFiles(in_Folderpath)]">
                             <ActivityAction x:TypeArguments="x:String">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:String" Name="item" />
@@ -450,7 +451,7 @@
                               </Assign>
                             </ActivityAction>
                           </ParallelForEach>
-                          <Assign sap:VirtualizedContainerService.HintSize="756,62" sap2010:WorkflowViewState.IdRef="Assign_29">
+                          <Assign sap:VirtualizedContainerService.HintSize="636,62" sap2010:WorkflowViewState.IdRef="Assign_29">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[FileForUserName]</OutArgument>
                             </Assign.To>
@@ -458,7 +459,7 @@
                               <InArgument x:TypeArguments="x:String">[FileForUser.FullName]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="756,214.666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_1" Values="[Directory.GetFiles(&quot;C:\temp\Input&quot;)]">
+                          <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="636,214.666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_1" Values="[Directory.GetFiles(&quot;C:\temp\Input&quot;)]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -479,7 +480,7 @@
                               </Assign>
                             </ActivityAction>
                           </ParallelForEach>
-                          <Assign sap:VirtualizedContainerService.HintSize="756,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+                          <Assign sap:VirtualizedContainerService.HintSize="636,62" sap2010:WorkflowViewState.IdRef="Assign_13">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[InputFileName]</OutArgument>
                             </Assign.To>
@@ -487,7 +488,7 @@
                               <InArgument x:TypeArguments="x:String">[InputFile.FullName]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="756,62" sap2010:WorkflowViewState.IdRef="Assign_14">
+                          <Assign sap:VirtualizedContainerService.HintSize="636,62" sap2010:WorkflowViewState.IdRef="Assign_14">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[Receipent]</OutArgument>
                             </Assign.To>
@@ -495,7 +496,7 @@
                               <InArgument x:TypeArguments="x:String">[Mail.From.Address.ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="756,62" sap2010:WorkflowViewState.IdRef="Assign_17">
+                          <Assign sap:VirtualizedContainerService.HintSize="636,62" sap2010:WorkflowViewState.IdRef="Assign_17">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[in_ProjectName]</OutArgument>
                             </Assign.To>
@@ -503,10 +504,11 @@
                               <InArgument x:TypeArguments="x:String">[Mail.Subject.ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Sequence sap:VirtualizedContainerService.HintSize="756,604.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <Sequence sap:VirtualizedContainerService.HintSize="636,604.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_27">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,512.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="Macro_CopyPasteInputFile.xlsm">
@@ -529,13 +531,13 @@
                               </ui:ExcelApplicationScope.Body>
                             </ui:ExcelApplicationScope>
                           </Sequence>
-                          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="756,2762.66666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[InputFileName]">
+                          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="636,3043.33333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[InputFileName]">
                             <ui:ExcelApplicationScope.Body>
                               <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Do-" sap:VirtualizedContainerService.HintSize="602,2654" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                <Sequence DisplayName="Do-" sap:VirtualizedContainerService.HintSize="602,2934.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="sd:DataTable" Name="DataFromUser" />
                                     <Variable x:TypeArguments="x:Int32" Name="index" />
@@ -852,7 +854,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:ExcelReadRange>
                                   </Switch>
-                                  <Switch x:TypeArguments="x:Int32" DisplayName="Component Data - Based on Number of Services" Expression="[NumberofServices]" sap:VirtualizedContainerService.HintSize="560,186.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                  <Switch x:TypeArguments="x:Int32" DisplayName="Component Data - Based on Number of Services" Expression="[NumberofServices]" sap:VirtualizedContainerService.HintSize="560,188.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -884,40 +886,40 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:ExcelReadCell Cell="E33" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="File for user">
+                                    <ui:ExcelReadCell Cell="E34" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="File for user">
                                       <ui:ExcelReadCell.Result>
                                         <OutArgument x:TypeArguments="ui:GenericValue">[RPMLimit]</OutArgument>
                                       </ui:ExcelReadCell.Result>
                                     </ui:ExcelReadCell>
-                                    <ui:ExcelReadCell Cell="E34" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="File for user">
+                                    <ui:ExcelReadCell Cell="E35" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="File for user">
                                       <ui:ExcelReadCell.Result>
                                         <OutArgument x:TypeArguments="ui:GenericValue">[SpeedLimit]</OutArgument>
                                       </ui:ExcelReadCell.Result>
                                     </ui:ExcelReadCell>
-                                    <ui:ExcelReadCell Cell="E35" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="File for user">
+                                    <ui:ExcelReadCell Cell="E36" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="File for user">
                                       <ui:ExcelReadCell.Result>
                                         <OutArgument x:TypeArguments="ui:GenericValue">[Bore]</OutArgument>
                                       </ui:ExcelReadCell.Result>
                                     </ui:ExcelReadCell>
                                   </Sequence>
-                                  <Sequence DisplayName="No Of Stages Add On" sap:VirtualizedContainerService.HintSize="560,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                  <Sequence DisplayName="No Of Stages Add On" sap:VirtualizedContainerService.HintSize="560,348" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:ExcelReadCell Cell="F29" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="File for user">
+                                    <ui:ExcelReadCell Cell="F30" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="File for user">
                                       <ui:ExcelReadCell.Result>
                                         <OutArgument x:TypeArguments="ui:GenericValue">[StageOne]</OutArgument>
                                       </ui:ExcelReadCell.Result>
                                     </ui:ExcelReadCell>
-                                    <ui:ExcelReadCell Cell="G29" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="File for user">
+                                    <ui:ExcelReadCell Cell="G30" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="File for user">
                                       <ui:ExcelReadCell.Result>
                                         <OutArgument x:TypeArguments="ui:GenericValue">[Stagetwo]</OutArgument>
                                       </ui:ExcelReadCell.Result>
                                     </ui:ExcelReadCell>
-                                    <ui:ExcelReadCell Cell="H29" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="File for user">
+                                    <ui:ExcelReadCell Cell="H30" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="File for user">
                                       <ui:ExcelReadCell.Result>
                                         <OutArgument x:TypeArguments="ui:GenericValue">[Stagethree]</OutArgument>
                                       </ui:ExcelReadCell.Result>
@@ -925,49 +927,21 @@
                                   </Sequence>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EnterTechData workflow" sap:VirtualizedContainerService.HintSize="560,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="EnterTechData.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TechData">
-                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TechnicalData" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberofServices">
-                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="NumberofServices" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TechData">[TechnicalData]</InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberofServices">[NumberofServices]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_InputExcelPath" />
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ComponentData">
-                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ComponentData" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerName">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CustomerName" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLocation">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Location" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_OptionalTechData">
-                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="OptionalTechnicalData" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_MotorType">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="MotorType" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_PreselectionTool">
-                                        <Literal x:TypeArguments="x:String">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-20.xlsm</Literal>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_RPMLimit">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="RPMLimit" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_PistonLimit">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SpeedLimit" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_Bore">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Bore" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stageone">
-                                        <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="StageOne" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagetwo">
-                                        <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="Stagetwo" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagethree">
-                                        <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="Stagethree" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ComponentData">[ComponentData]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerName">[CustomerName]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLocation">[Location]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_OptionalTechData">[OptionalTechnicalData]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_MotorType">[MotorType]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_PreselectionTool">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-20.xlsm</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_RPMLimit">[RPMLimit]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_PistonLimit">[SpeedLimit]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_Bore">[Bore]</InArgument>
+                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stageone">[StageOne]</InArgument>
+                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagetwo">[Stagetwo]</InArgument>
+                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagethree">[Stagethree]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Send output Values workflow" sap:VirtualizedContainerService.HintSize="560,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Send output Values.xaml">
