@@ -210,7 +210,7 @@
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
             <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="766,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'excel.exe Presizing-RC_...'" sap:VirtualizedContainerService.HintSize="766,406" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="d020d4efa1f62845d901289af11fa714" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='RC_H-series_Presizing_5-0-0-20.xlsm - Excel' /&gt;">
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'excel.exe Presizing-RC_...'" sap:VirtualizedContainerService.HintSize="766,406" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="d020d4efa1f62845d901289af11fa714" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='RC_H-series_Presizing_5-0-0-23.xlsm - Excel' /&gt;">
               <ui:WindowScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>

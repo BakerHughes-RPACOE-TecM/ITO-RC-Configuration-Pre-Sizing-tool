@@ -927,21 +927,49 @@
                                   </Sequence>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EnterTechData workflow" sap:VirtualizedContainerService.HintSize="560,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="EnterTechData.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TechData">[TechnicalData]</InArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberofServices">[NumberofServices]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TechData">
+                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TechnicalData" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberofServices">
+                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="NumberofServices" />
+                                      </InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_InputExcelPath" />
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ComponentData">[ComponentData]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerName">[CustomerName]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLocation">[Location]</InArgument>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_OptionalTechData">[OptionalTechnicalData]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_MotorType">[MotorType]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_PreselectionTool">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-20.xlsm</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_RPMLimit">[RPMLimit]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_PistonLimit">[SpeedLimit]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_Bore">[Bore]</InArgument>
-                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stageone">[StageOne]</InArgument>
-                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagetwo">[Stagetwo]</InArgument>
-                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagethree">[Stagethree]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ComponentData">
+                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ComponentData" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerName">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CustomerName" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLocation">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Location" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_OptionalTechData">
+                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="OptionalTechnicalData" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_MotorType">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="MotorType" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_PreselectionTool">
+                                        <Literal x:TypeArguments="x:String">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-23.xlsm</Literal>
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_RPMLimit">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="RPMLimit" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_PistonLimit">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SpeedLimit" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_Bore">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Bore" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stageone">
+                                        <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="StageOne" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagetwo">
+                                        <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="Stagetwo" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagethree">
+                                        <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="Stagethree" />
+                                      </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Send output Values workflow" sap:VirtualizedContainerService.HintSize="560,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Send output Values.xaml">
@@ -949,12 +977,24 @@
                                       <InArgument x:TypeArguments="x:String" x:Key="Errorshot" />
                                       <InArgument x:TypeArguments="x:String" x:Key="CompressorType" />
                                       <InArgument x:TypeArguments="x:String" x:Key="AbsorbedPower" />
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_InputFileName">[InputFilename]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">[Receipent]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_ProjectName">[in_ProjectName]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_Preselectiontool">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-20.xlsm</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_ProposalsavePath">["C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet_"+in_ProjectName+".pdf"]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_TechnicalBudgetDoc">["C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\MergedBudgetTemplet\TechnicalBudgetDoc_"+in_ProjectName+".pdf"]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_InputFileName">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InputFilename" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Receipent" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_ProjectName">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ProjectName" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_Preselectiontool">
+                                        <Literal x:TypeArguments="x:String">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-23.xlsm</Literal>
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_ProposalsavePath">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet_&quot;+in_ProjectName+&quot;.pdf&quot;" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="In_TechnicalBudgetDoc">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\MergedBudgetTemplet\TechnicalBudgetDoc_&quot;+in_ProjectName+&quot;.pdf&quot;" />
+                                      </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>

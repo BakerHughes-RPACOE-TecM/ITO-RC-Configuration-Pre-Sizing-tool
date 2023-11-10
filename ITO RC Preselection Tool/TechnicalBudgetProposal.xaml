@@ -5,6 +5,7 @@
     <x:Property Name="In_BudgetSheetPath" Type="InArgument(x:String)" />
     <x:Property Name="In_MergedBudgetProposal" Type="InArgument(x:String)" />
     <x:Property Name="In_Receipent" Type="InArgument(x:String)" />
+    <x:Property Name="In_BudgettemplatePath2" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -88,12 +89,14 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="TechnicalBudgetProposal" sap:VirtualizedContainerService.HintSize="552,2194" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="510,135.333333333333" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Excel" />
@@ -274,9 +277,9 @@
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
-                    <Delay DisplayName="Delay Added for Converting Excel to PDF Format" Duration="00:00:30" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                    <Delay DisplayName="Delay Added for Converting Excel to PDF Format" Duration="00:00:50" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Proposal Generation Completed&quot;]" />
-                    <upap:JoinPDF DisplayName="Join PDF Files" FileList="[{In_BudgettemplatePath,In_BudgetSheetPath}]" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="JoinPDF_2" OutputFileName="[In_MergedBudgetProposal]" />
+                    <upap:JoinPDF DisplayName="Join PDF Files" FileList="[{In_BudgettemplatePath,In_BudgettemplatePath2,In_BudgetSheetPath}]" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="JoinPDF_2" OutputFileName="[In_MergedBudgetProposal]" />
                   </Sequence>
                 </ActivityAction>
               </ui:WindowScope.Body>
@@ -284,6 +287,12 @@
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
   </Sequence>
 </Activity>
