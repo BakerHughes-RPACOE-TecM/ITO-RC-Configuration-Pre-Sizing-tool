@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,2258.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,2298.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TechnicalBudgetProposal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -279,7 +279,7 @@
                     </ui:Click>
                     <Delay DisplayName="Delay Added for Converting Excel to PDF Format" Duration="00:00:50" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Proposal Generation Completed&quot;]" />
-                    <upap:JoinPDF DisplayName="Join PDF Files" FileList="[{In_BudgettemplatePath,In_BudgettemplatePath2,In_BudgetSheetPath}]" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="JoinPDF_2" OutputFileName="[In_MergedBudgetProposal]" />
+                    <upap:JoinPDF DisplayName="Join PDF Files" FileList="[{In_BudgettemplatePath,In_BudgetSheetPath,In_BudgettemplatePath2}]" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="JoinPDF_2" OutputFileName="[In_MergedBudgetProposal]" />
                   </Sequence>
                 </ActivityAction>
               </ui:WindowScope.Body>
