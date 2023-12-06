@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,3715.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,1710.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_output_Values_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -116,7 +116,7 @@
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Send_output_Values" sap:VirtualizedContainerService.HintSize="771.333333333333,3610.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Send_output_Values" sap:VirtualizedContainerService.HintSize="480.666666666667,1646" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="C:\Users\Koraara\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Processed" Name="DestinationPath2" />
       <Variable x:TypeArguments="x:String" Default="C:\Users\Koraara\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet.pdf" Name="FilePath" />
@@ -129,8 +129,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="729.333333333333,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="729.333333333333,3456.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="438.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.666666666667,1492" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -138,7 +138,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="690.666666666667,3195.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="690.666666666667,3155.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -308,10 +308,10 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:SendExchangeMail>
-                            <Sequence x:Key="Technical Budget Proposal" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                            <Sequence x:Key="Technical Budget Proposal" sap:VirtualizedContainerService.HintSize="376,395.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_31">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -410,7 +410,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="695.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -421,7 +421,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="476,791.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap:VirtualizedContainerService.HintSize="556.666666666667,1998" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:Image" Name="Errorshot" />
                 <Variable x:TypeArguments="x:String" Default="C:\Users\koraara\Documents\RC_Configuration_Production\UnProcessed" Name="DestinationPath" />
@@ -432,9 +432,9 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Exception Sequence Started&quot;]" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Take Screen shot&quot;]" />
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,337.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Exception Sequence Started&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Take Screen shot&quot;]" />
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514.666666666667,1576" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Variables>
                   <Variable x:TypeArguments="ui:Window" Name="TeamcenterScreenshot" />
                 </TryCatch.Variables>
@@ -489,7 +489,7 @@
                               </ui:TakeScreenshot.Target>
                             </ui:TakeScreenshot>
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Took Screen Shot Sucesfull&quot;]" />
-                            <ui:SaveImage DisplayName="Save Image" FileName="[&quot;Errorshots\&quot;+In_ProjectName+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Errorshot]" />
+                            <ui:SaveImage DisplayName="Save Image" FileName="[&quot;C:\ITO RC Error Screen Sots\&quot;+In_ProjectName+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Errorshot]" />
                             <Delay DisplayName="Save Image 5 seconds" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_11" />
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Image Saved Sucesfully&quot;]" />
                           </Sequence>
@@ -535,10 +535,10 @@
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,165.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -546,12 +546,12 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;No Screen shot Was Taken&quot; + TeamcenterScreenshot.ToString]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;No Screen shot Was Taken&quot;]" />
                     </ActivityAction>
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="514.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_16">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_38">
                     <sap:WorkflowViewStateService.ViewState>
@@ -583,7 +583,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="695.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -621,7 +621,7 @@
                 </If>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="760.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -641,7 +641,7 @@
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,1042" sap2010:WorkflowViewState.IdRef="Sequence_47">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,1230.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_47">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -662,7 +662,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7218d30a-37b8-44ef-a0e9-aacd504b5914" InformativeScreenshot="62887f670e1432f0f1f85f4112bd88e6" Selector="&lt;wnd app='concentr.exe' cls='#32770' title='Citrix Workspace Connection Center' /&gt;&lt;wnd aaname='Log Off' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7218d30a-37b8-44ef-a0e9-aacd504b5914" InformativeScreenshot="62887f670e1432f0f1f85f4112bd88e6" Selector="&lt;wnd app='concentr.exe' cls='#32770' title='Citrix Workspace Connection Center' /&gt;&lt;wnd ctrlid='1002' title='&amp;amp;Log Off' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -684,7 +684,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c6c8b3ce-047b-432d-a061-456ab048d951" InformativeScreenshot="937cad8127542e0a5e373d0274a37278" Selector="&lt;wnd app='concentr.exe' cls='#32770' title='Citrix Workspace Connection Center' /&gt;&lt;wnd aaname='Yes' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c6c8b3ce-047b-432d-a061-456ab048d951" InformativeScreenshot="937cad8127542e0a5e373d0274a37278" Selector="&lt;wnd app='concentr.exe' cls='#32770' title='Citrix Workspace Connection Center' /&gt;&lt;wnd ctrlid='6' title='&amp;amp;Yes' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -697,6 +697,8 @@
           <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,135.333333333333" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="concentr.exe" />
           <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="KillingProcess.bat" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_6" />
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Logging of from the connection center End&quot;]" />
+          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="KillingProcess.bat" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_7" />
+          <Delay DisplayName="Wait for Next Iteration " Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_12" />
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
