@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,1710.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,3675.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_output_Values_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -114,9 +114,10 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Send_output_Values" sap:VirtualizedContainerService.HintSize="480.666666666667,1646" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Send_output_Values" sap:VirtualizedContainerService.HintSize="771.333333333333,3610.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="C:\Users\Koraara\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Processed" Name="DestinationPath2" />
       <Variable x:TypeArguments="x:String" Default="C:\Users\Koraara\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet.pdf" Name="FilePath" />
@@ -129,8 +130,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="438.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.666666666667,1492" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="729.333333333333,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="729.333333333333,3456.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -138,7 +139,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="690.666666666667,3155.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="690.666666666667,3195.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -260,8 +261,12 @@
                           </ui:InvokeWorkflowFile>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke BudgetDatasheet2 workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="BudgetDatasheet2.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">[In_InputFileName]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">C:\Users\koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_InputFileName" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf&quot;" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <upap:JoinPDF DisplayName="Join PDF Files" FileList="[{In_ProposalsavePath,In_BudgettemplatePath2}]" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="JoinPDF_1" OutputFileName="[In_MergedProposalDocument]" />
@@ -317,12 +322,24 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TechnicalBudgetProposal workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="TechnicalBudgetProposal.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">[In_InputFileName]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath">C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet\BudgetTemplate.pdf</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgetSheetPath">[In_ProposalsavePath]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_MergedBudgetProposal">C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\MergedBudgetTemplet\TechnicalBudgetDoc.pdf</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">[In_Receipent]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_InputFileName" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet\BudgetTemplate.pdf&quot;" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgetSheetPath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_ProposalsavePath" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_MergedBudgetProposal">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\MergedBudgetTemplet\TechnicalBudgetDoc.pdf&quot;" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Receipent" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf&quot;" />
+                                  </InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -349,12 +366,24 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TechnicalBudgetProposal workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="TechnicalBudgetProposal.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">[In_InputFileName]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath">["C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet\BudgetTemplate_"+In_ProjectName+".pdf"]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgetSheetPath">["C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet_"+In_ProjectName+".pdf"]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_MergedBudgetProposal">[In_TechnicalBudgetDoc]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">[In_Receipent]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_InputFileName" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet\BudgetTemplate_&quot;+In_ProjectName+&quot;.pdf&quot;" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgetSheetPath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet_&quot;+In_ProjectName+&quot;.pdf&quot;" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_MergedBudgetProposal">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_TechnicalBudgetDoc" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Receipent" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf&quot;" />
+                                  </InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -365,13 +394,27 @@
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Main_TeamCenter workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ITORC_TeamCenter\Main_TeamCenter.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">[In_InputFileName]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_PreselectionPath">[In_Preselectiontool]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_TeamcenterCostSheet">["C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Team Center Report\CostSheet_"+In_ProjectName+".xlsx"]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">[In_Receipent]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_TechnicalbudgetDoc">[In_TechnicalBudgetDoc]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="In_ProjectName">[In_ProjectName]</InArgument>
-                                  <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_UserSso">[In_UserSSO]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_InputFilePath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_InputFileName" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_PreselectionPath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Preselectiontool" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_TeamcenterCostSheet">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Team Center Report\CostSheet_&quot;+In_ProjectName+&quot;.xlsx&quot;" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Receipent" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_TechnicalbudgetDoc">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_TechnicalBudgetDoc" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_ProjectName">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_ProjectName" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_UserSso">
+                                    <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="In_UserSSO" />
+                                  </InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="In_Existinguser" />
                                   <InArgument x:TypeArguments="x:String" x:Key="In_NoUser" />
                                   <InArgument x:TypeArguments="x:String" x:Key="In_NewUser" />

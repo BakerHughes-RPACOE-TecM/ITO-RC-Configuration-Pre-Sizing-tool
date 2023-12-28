@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1595.33333333333,4394.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1595.33333333333,6686.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -92,7 +92,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1605.33333333333,4330" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="1605.33333333333,6582" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="TechDataUpperIndex" />
       <Variable x:TypeArguments="x:Int32" Name="TechDataLowerIndex" />
@@ -115,18 +115,14 @@
       <Variable x:TypeArguments="ui:GenericValue" Name="RPMLimit" />
       <Variable x:TypeArguments="ui:GenericValue" Name="SpeedLimit" />
       <Variable x:TypeArguments="ui:GenericValue" Name="Bore" />
-      <Variable x:TypeArguments="x:Int32" Name="TransactionNumber">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="TransactionNumber" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Check the Input File EMail" sap:VirtualizedContainerService.HintSize="1563.33333333333,4238" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Check the Input File EMail" sap:VirtualizedContainerService.HintSize="1563.33333333333,6490" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,7 +130,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:GetExchangeMailMessages ApplicationId="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" FilterByMessageIds="{x:Null}" FilterExpression="{x:Null}" SecurePassword="{x:Null}" SharedMailbox="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" CustomFolder="Inbox" DisplayName="Get Exchange Mail Messages" ExchangeVersion="Exchange2007_SP1" GetAttachements="True" sap:VirtualizedContainerService.HintSize="1521.33333333333,22" sap2010:WorkflowViewState.IdRef="GetExchangeMailMessages_1" IsBodyHtml="False" MailFolder="Calendar" MarkAsRead="True" Messages="[InputEmail]" OnlyUnreadMessages="True" OrderByDate="OldestFirst" Password="2Az{[IkFb2S1.[Zv7,/Q^9,y9" Server="https://mail.bakerhughes.com/EWS/Exchange.asmx" Top="30" User="SVC-AI-BOT-1" />
-      <If Condition="[InputEmail.ToArray.Length = 0]" sap:VirtualizedContainerService.HintSize="1521.33333333333,4084" sap2010:WorkflowViewState.IdRef="If_12">
+      <If Condition="[InputEmail.ToArray.Length = 0]" sap:VirtualizedContainerService.HintSize="1521.33333333333,6336" sap2010:WorkflowViewState.IdRef="If_12">
         <If.Then>
           <Sequence DisplayName="No EMail" sap:VirtualizedContainerService.HintSize="376,186.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
@@ -146,20 +142,20 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Emails Fetched" sap:VirtualizedContainerService.HintSize="1099.33333333333,3920" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Emails Fetched" sap:VirtualizedContainerService.HintSize="1099.33333333333,6172" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1057.33333333333,3828" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[InputEmail]">
+            <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1057.33333333333,6080" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[InputEmail]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="Mail" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="1020.66666666667,3689.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <Sequence sap:VirtualizedContainerService.HintSize="1020.66666666667,5941.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_33">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="MailDomain" />
                       <Variable x:TypeArguments="ui:GenericValue" Name="StageOne" />
@@ -188,7 +184,7 @@
                         <InArgument x:TypeArguments="x:String">[Mail.From.Host]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[MailDomain = &quot;bakerhughes.com&quot;]" sap:VirtualizedContainerService.HintSize="978.666666666667,3393.33333333333" sap2010:WorkflowViewState.IdRef="If_13">
+                    <If Condition="[MailDomain = &quot;bakerhughes.com&quot;]" sap:VirtualizedContainerService.HintSize="978.666666666667,5645.33333333333" sap2010:WorkflowViewState.IdRef="If_13">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,9 +192,9 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556.666666666667,3229.33333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556.666666666667,5481.33333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <TryCatch.Try>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518,2991.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518,5243.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="si:FileInfo" Name="FileForUser" />
                                 <Variable x:TypeArguments="x:String" Name="FileForUserName" />
@@ -210,7 +206,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Total Email Count  = &quot;+ InputEmail.Count.ToString +vbNewLine+&quot;Processing Email Number = &quot;+ TransactionNumber.ToString+vbNewLine+&quot;Subject = &quot;+Mail.Subject+vbNewLine+&quot;Sender = &quot;+Mail.Sender.ToString]" />
-                              <Sequence DisplayName="Deleting Folder Content " sap:VirtualizedContainerService.HintSize="476,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                              <Sequence DisplayName="Deleting Folder Content " sap:VirtualizedContainerService.HintSize="476,2321.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="s:String[]" Name="TeamCenterCostsheet" />
                                   <Variable x:TypeArguments="s:String[]" Name="ErrorScreenShot" />
@@ -221,7 +217,7 @@
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -230,10 +226,10 @@
                                     <OutArgument x:TypeArguments="s:String[]">[TeamCenter_citrix_File_Path]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\koraara\Team Center Citrix")]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\Team Center Citrix")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[TeamCenter_citrix_File_Path]">
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,311.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[TeamCenter_citrix_File_Path]">
                                   <ui:ForEach.Body>
                                     <ActivityAction x:TypeArguments="x:String">
                                       <ActivityAction.Argument>
@@ -251,7 +247,7 @@
                                   </ui:ForEach.Body>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -292,7 +288,7 @@
                                     <OutArgument x:TypeArguments="s:String[]">[PDF_PdfInputFiles]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet")]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_11" Values="[PDF_PdfInputFiles]">
@@ -345,7 +341,7 @@
                                     <OutArgument x:TypeArguments="s:String[]">[TeamCenterCostsheet]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Team Center Report")]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Team Center Report")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_12" Values="[TeamCenterCostsheet]">
@@ -376,7 +372,7 @@
                                     <OutArgument x:TypeArguments="s:String[]">[ErrorScreenShot]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Errorshots")]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Errorshots")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_13" Values="[ErrorScreenShot]">
@@ -407,7 +403,7 @@
                                     <OutArgument x:TypeArguments="s:String[]">[BudgetTemplate]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet")]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[BudgetTemplate]">
@@ -438,7 +434,7 @@
                                     <OutArgument x:TypeArguments="s:String[]">[BudgetTemplate2]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2")]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_16" Values="[BudgetTemplate2]">
@@ -469,7 +465,7 @@
                                     <OutArgument x:TypeArguments="s:String[]">[MergedProposalDoc]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Merged Proposal Document")]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Merged Proposal Document")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="362.666666666667,311.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_17" Values="[MergedProposalDoc]">
@@ -1015,21 +1011,49 @@
                                       </Sequence>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EnterTechData workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="EnterTechData.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TechData">[TechnicalData]</InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberofServices">[NumberofServices]</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TechData">
+                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TechnicalData" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberofServices">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="NumberofServices" />
+                                          </InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_InputExcelPath" />
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ComponentData">[ComponentData]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_CustomerName">[CustomerName]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLocation">[Location]</InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_OptionalTechData">[OptionalTechnicalData]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_MotorType">[MotorType]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_PreselectionTool">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-23.xlsm</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_RPMLimit">[RPMLimit]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_PistonLimit">[SpeedLimit]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_Bore">[Bore]</InArgument>
-                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stageone">[StageOne]</InArgument>
-                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagetwo">[Stagetwo]</InArgument>
-                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagethree">[Stagethree]</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ComponentData">
+                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ComponentData" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_CustomerName">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CustomerName" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLocation">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Location" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_OptionalTechData">
+                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="OptionalTechnicalData" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_MotorType">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="MotorType" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_PreselectionTool">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-23.xlsm&quot;" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_RPMLimit">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="RPMLimit" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_PistonLimit">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SpeedLimit" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_Bore">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Bore" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stageone">
+                                            <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="StageOne" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagetwo">
+                                            <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="Stagetwo" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_Stagethree">
+                                            <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="Stagethree" />
+                                          </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Send output Values workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Send output Values.xaml">
@@ -1037,15 +1061,33 @@
                                           <InArgument x:TypeArguments="x:String" x:Key="Errorshot" />
                                           <InArgument x:TypeArguments="x:String" x:Key="CompressorType" />
                                           <InArgument x:TypeArguments="x:String" x:Key="AbsorbedPower" />
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_InputFileName">[InputFilename]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">[Receipent]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_ProjectName">[in_ProjectName]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_Preselectiontool">C:\Users\koraara\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-23.xlsm</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_ProposalsavePath">["C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet_"+in_ProjectName+".pdf"]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_TechnicalBudgetDoc">["C:\Users\Koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\MergedBudgetTemplet\TechnicalBudgetDoc_"+in_ProjectName+".pdf"]</InArgument>
-                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_UserSSO">[In_UserSSO]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">C:\Users\koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="In_MergedProposalDocument">C:\Users\koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Merged Proposal Document\MergedProposalDocument.pdf</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_InputFileName">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InputFilename" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_Receipent">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Receipent" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_ProjectName">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ProjectName" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_Preselectiontool">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Desktop\RC Pre Selection tool\RC_H-series_Presizing_5-0-0-23.xlsm&quot;" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_ProposalsavePath">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetDataSheet\BudgetSheet_&quot;+in_ProjectName+&quot;.pdf&quot;" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_TechnicalBudgetDoc">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot;+Environment.UserName+&quot;\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\MergedBudgetTemplet\TechnicalBudgetDoc_&quot;+in_ProjectName+&quot;.pdf&quot;" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="ui:GenericValue" x:Key="In_UserSSO">
+                                            <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="In_UserSSO" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_BudgettemplatePath2">
+                                            <Literal x:TypeArguments="x:String">C:\Users\koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\BudgetTemplateSheet2\BudgetTemplate2.pdf</Literal>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_MergedProposalDocument">
+                                            <Literal x:TypeArguments="x:String">C:\Users\koraara\OneDrive - Baker Hughes\Documents\UiPath\ITO RC Pre Selection\ITO RC Preselection Tool\Merged Proposal Document\MergedProposalDocument.pdf</Literal>
+                                          </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
