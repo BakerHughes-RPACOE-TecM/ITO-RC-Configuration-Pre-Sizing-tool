@@ -20,7 +20,7 @@
   <sap:VirtualizedContainerService.HintSize>1153.33333333333,1120.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="43">
+    <scg:List x:TypeArguments="x:String" Capacity="86">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -64,10 +64,12 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -102,6 +104,9 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
       <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Team Center Main" sap:VirtualizedContainerService.HintSize="1132,1056" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -3086,9 +3091,9 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="856,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[&quot;TRain Composition Sequence Started&quot;]" />
                                             <Delay DisplayName="Wait till creating the Proposal" Duration="00:02:00" sap:VirtualizedContainerService.HintSize="856,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
-                                            <ui:UiElementExists DisplayName="Check Scroll Bar" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="856,106" sap2010:WorkflowViewState.IdRef="UiElementExists_56">
+                                            <ui:UiElementExists DisplayName="Scroll Bar Check" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="856,106" sap2010:WorkflowViewState.IdRef="UiElementExists_61">
                                               <ui:UiElementExists.Target>
-                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3978f1aa-84b8-4d45-a74c-0740ee8b829c" InformativeScreenshot="40b188e421eb68a0738992ed224753e9" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;wnd cls='SWT_Window0' idx='56' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='ScrollbarThumb' name='Position' /&gt;">
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9a98a3ac-c441-4481-b175-4827d69c10d3" InformativeScreenshot="1ad8d5e5e1ce0168b5347ff56fee5d84" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;uia automationid='ScrollbarThumb' name='Position' role='thumb' /&gt;">
                                                   <ui:Target.TimeoutMS>
                                                     <InArgument x:TypeArguments="x:Int32" />
                                                   </ui:Target.TimeoutMS>
@@ -3098,7 +3103,7 @@
                                                 </ui:Target>
                                               </ui:UiElementExists.Target>
                                             </ui:UiElementExists>
-                                            <If Condition="[ScrollBar]" sap:VirtualizedContainerService.HintSize="856,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_44">
+                                            <If Condition="[ScrollBar]" sap:VirtualizedContainerService.HintSize="856,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_51">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3106,7 +3111,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <If.Then>
-                                                <If Condition="[CountAddTrain &gt; 6]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_39">
+                                                <If Condition="[CountAddTrain &gt; 8]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_39">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3189,12 +3194,12 @@
                                                     </Sequence>
                                                   </If.Then>
                                                   <If.Else>
-                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_90" Level="Info" Message="[&quot;Scrolling down is not required Numder of lines are &quot; + CountAddTrain.ToString]" />
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_99" Level="Info" Message="[&quot;Scrolling down is not required Numder of lines are &quot; + CountAddTrain.ToString]" />
                                                   </If.Else>
                                                 </If>
                                               </If.Then>
                                               <If.Else>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_84" Level="Info" Message="[&quot;Scroll Down Bar Does Not exists Scrolling down is not required Numder of lines are &quot; + CountAddTrain.ToString]" />
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_90" Level="Info" Message="[&quot;Scroll Bar Does Not Exists Scrolling down is not required Numder of lines are &quot; + CountAddTrain.ToString]" />
                                               </If.Else>
                                             </If>
                                             <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Click On Add Train" sap:VirtualizedContainerService.HintSize="856,106" sap2010:WorkflowViewState.IdRef="Click_21" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
@@ -3797,9 +3802,9 @@
                                                       <InArgument x:TypeArguments="x:Int32">[CheckListCounter - 1]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:UiElementExists DisplayName="Check Scroll Bar" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="562.666666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_57">
+                                                  <ui:UiElementExists DisplayName="Scroll Bar Check" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="562.666666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_62">
                                                     <ui:UiElementExists.Target>
-                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3978f1aa-84b8-4d45-a74c-0740ee8b829c" InformativeScreenshot="40b188e421eb68a0738992ed224753e9" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;wnd cls='SWT_Window0' idx='56' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='ScrollbarThumb' name='Position' /&gt;">
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9a98a3ac-c441-4481-b175-4827d69c10d3" InformativeScreenshot="1ad8d5e5e1ce0168b5347ff56fee5d84" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;uia automationid='ScrollbarThumb' name='Position' role='thumb' /&gt;">
                                                         <ui:Target.TimeoutMS>
                                                           <InArgument x:TypeArguments="x:Int32" />
                                                         </ui:Target.TimeoutMS>
@@ -3817,7 +3822,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <If.Then>
-                                                      <If Condition="[CheckListCounter &gt; 3]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_41">
+                                                      <If Condition="[CheckListCounter &gt; 5]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_41">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -22099,9 +22104,9 @@
                                                           <InArgument x:TypeArguments="x:Int32">[InitiateBomCounter - 1]</InArgument>
                                                         </Assign.Value>
                                                       </Assign>
-                                                      <ui:UiElementExists DisplayName="Check Scroll Bar" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="714,106" sap2010:WorkflowViewState.IdRef="UiElementExists_58">
+                                                      <ui:UiElementExists DisplayName="Scroll Bar Check" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="714,106" sap2010:WorkflowViewState.IdRef="UiElementExists_63">
                                                         <ui:UiElementExists.Target>
-                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3978f1aa-84b8-4d45-a74c-0740ee8b829c" InformativeScreenshot="40b188e421eb68a0738992ed224753e9" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;wnd cls='SWT_Window0' idx='56' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='ScrollbarThumb' name='Position' /&gt;">
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9a98a3ac-c441-4481-b175-4827d69c10d3" InformativeScreenshot="1ad8d5e5e1ce0168b5347ff56fee5d84" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;uia automationid='ScrollbarThumb' name='Position' role='thumb' /&gt;">
                                                             <ui:Target.TimeoutMS>
                                                               <InArgument x:TypeArguments="x:Int32" />
                                                             </ui:Target.TimeoutMS>
@@ -22119,7 +22124,7 @@
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <If.Then>
-                                                          <If Condition="[InitiateBomCounter &gt; 3]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_42">
+                                                          <If Condition="[InitiateBomCounter &gt; 5]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_42">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -22841,9 +22846,9 @@
                                                           <InArgument x:TypeArguments="x:Int32">[CostingCounter - 1]</InArgument>
                                                         </Assign.Value>
                                                       </Assign>
-                                                      <ui:UiElementExists DisplayName="Check Scroll Bar" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="1236,106" sap2010:WorkflowViewState.IdRef="UiElementExists_59">
+                                                      <ui:UiElementExists DisplayName="Scroll Bar Check" Exists="[ScrollBar]" sap:VirtualizedContainerService.HintSize="1236,106" sap2010:WorkflowViewState.IdRef="UiElementExists_64">
                                                         <ui:UiElementExists.Target>
-                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3978f1aa-84b8-4d45-a74c-0740ee8b829c" InformativeScreenshot="40b188e421eb68a0738992ed224753e9" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;wnd cls='SWT_Window0' idx='56' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='ScrollbarThumb' name='Position' /&gt;">
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9a98a3ac-c441-4481-b175-4827d69c10d3" InformativeScreenshot="1ad8d5e5e1ce0168b5347ff56fee5d84" Selector="&lt;wnd app='javaw.exe' cls='SWT_Window0' isremoteapp='1' title='ITO Platform - Teamcenter 13' /&gt;&lt;uia automationid='ScrollbarThumb' name='Position' role='thumb' /&gt;">
                                                             <ui:Target.TimeoutMS>
                                                               <InArgument x:TypeArguments="x:Int32" />
                                                             </ui:Target.TimeoutMS>
@@ -22854,8 +22859,14 @@
                                                         </ui:UiElementExists.Target>
                                                       </ui:UiElementExists>
                                                       <If Condition="[ScrollBar]" sap:VirtualizedContainerService.HintSize="1236,910" sap2010:WorkflowViewState.IdRef="If_47">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
                                                         <If.Then>
-                                                          <If Condition="[CostingCounter &gt; 3]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_48">
+                                                          <If Condition="[CostingCounter &gt; 5]" sap:VirtualizedContainerService.HintSize="856,746" sap2010:WorkflowViewState.IdRef="If_48">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
